@@ -1,0 +1,92 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    font-size: 2rem;
+    background-color: #222;
+    min-height: 100vh;
+}
+.glitch {
+    position: relative;
+     color: white;
+     text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+    -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+    0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+     animation: glitch 2s infinite;
+     
+ }
+
+ .glitch span {
+     position: absolute;
+     left: 0;
+     top: 0;
+ }
+
+ .glitch span:first-child {
+      animation: glitch 700ms infinite;
+      /* color: red; */
+      clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+      transform: translate(-0.0125em, -0.0125em);
+      opacity: .7;
+ }
+
+ .glitch span:last-child {
+    animation: glitch 350ms infinite;
+    
+    /* color: green; */
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+      transform: translate(-0.025em, 0.0125em);
+      opacity: .7;
+ }
+
+ @keyframes glitch {
+    0% {
+      text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+        -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+        -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    14% {
+      text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+        -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+        -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    15% {
+      text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+        0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+        -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    49% {
+      text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+        0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+        -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    50% {
+      text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+        0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    99% {
+      text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+        0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    100% {
+      text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75),
+        -0.025em -0.025em 0 rgba(0, 255, 0, 0.75),
+        -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-delay: -1ms !important;
+      animation-duration: 1ms !important;
+      animation-iteration-count: 1 !important;
+      background-attachment: initial !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0s !important;
+      transition-delay: 0s !important;
+    }
+  }
+  
