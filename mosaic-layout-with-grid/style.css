@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(27, 26, 26);
+}
+
+main {
+    display: grid;
+    height: 80%;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+    width: 60%;
+    /* grid-auto-flow: dense; */
+}
+
+.port-item {
+    background-color: rgb(250, 134, 40);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+
+}
+
+.small {
+    grid-row: span 1;
+    grid-column: span 1;
+}
+
+.medium {
+    grid-row: span 2;
+    grid-column: span 2;
+}
+
+.large {
+    grid-row: span 3;
+    grid-column: span 3;
+    background: url('//unsplash.it/940/300');
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-position: top center;
+}
+
+.tall {
+    grid-row: span 3;
+    grid-column: span 2;
+}
+
+.wide {
+    grid-row: span 2;
+    grid-column: span 3;
+}

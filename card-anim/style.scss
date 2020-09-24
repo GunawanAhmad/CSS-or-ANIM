@@ -1,0 +1,354 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+:root {
+    --clr-dark: rgb(13, 17, 19);
+    --clr-light: #fff;
+    --clr-accent: rgb(222, 52, 0);
+    --clr-accent-dark: rgb(163, 68, 0);
+    --clr-secondary: rgb(19, 105, 245);
+    --br: 0.8rem;
+    --transition: transform 150ms cubic-bezier(0, 0, 0, 1.01);
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--clr-dark);
+    color: var(--clr-light);
+}
+
+.game {
+    position: relative;
+    width: 20rem;
+    // border: 2px solid white;
+}
+
+.btn {
+    border: none;
+    background: var(--clr-secondary);
+    color: var(--clr-light);
+    border-radius: 100vw;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: rgb(14, 80, 187);
+    box-shadow: 2px 3px 7px black
+}
+
+
+
+.rank {
+    font-weight: bold;
+    position: absolute;
+    font-size: 1.5rem;
+    top: 0;
+    right: 1.5rem;
+    background: rgba(0, 0, 0, 0.65);
+    padding: 1rem 1rem 1rem 0.7rem;
+    clip-path: polygon(0% 0%, 100% 0, 100% 100%, 51% 82%, 0% 100%);
+    z-index: 99;
+    transition: var(--transition);
+}
+
+.icon::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.front {
+    transition: 150ms ease-in-out;
+
+    .img {
+        width: 20rem;
+        height: 25rem;
+        border-radius: var(--br);
+        background: url(./img/game-img.jpg);
+        background-size: cover;
+        background-position: center;
+        resize: both;
+    }
+
+    .name {
+        margin: 0.7rem 0;
+        font-size: 1.8rem;
+    }
+
+    .stats {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.2rem;
+    }
+
+    .views::before {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        margin-right: .6rem;
+        content: "\f007";
+    }
+
+    .streamers img {
+        border: 2px solid var(--clr-dark);
+
+        &:nth-of-type(1) {
+            transform: translateX(50%);
+            z-index: 1;
+        }
+
+        &:nth-of-type(2) {
+            transform: translateX(25%);
+        }
+    }
+}
+
+.streamers {
+    display: flex;
+
+    img {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+    }
+}
+
+.back {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+    transform: translateY(35%);
+    transition: transform 200ms ease, opacity 100ms linear;
+
+    .streaming-info {
+        columns: 2;
+        column-rule: 1px solid rgba(255, 255, 255, 0.4);
+        margin-bottom: 1rem;
+
+        .game-stat {
+            font-size: 1.4rem;
+            text-align: center;
+
+            span {
+                font-size: 1rem;
+                display: block;
+            }
+        }
+    }
+
+}
+
+
+
+.background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: url(./img/game-img.jpg);
+    background-size: cover;
+    z-index: -1;
+    transform: scale(0.2, 0.9);
+    border-radius: var(--br);
+    opacity: 0;
+    overflow: hidden;
+
+}
+
+.background::before {
+    content: '';
+    height: 70rem;
+    width: 70rem;
+    position: absolute;
+    border-radius: 47%;
+    left: -115%;
+    top: 7rem;
+    background-color: rgb(29, 29, 29);
+    animation: spin 15s linear infinite;
+    z-index: 3;
+}
+
+.background::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.55);
+    z-index: 2;
+}
+
+.game:hover {
+    .rank {
+        transform: translate(140%, -87%);
+    }
+
+    .front {
+        transform: translateY(-30%) scale(0.8);
+
+        .stats {
+            opacity: 0;
+        }
+
+        .name {
+            animation: gameName 200ms forwards;
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    .background {
+        transition: var(--transition), opacity 100ms linear;
+        transform: scale(1.3, 1.2);
+        opacity: 1;
+    }
+
+    .back {
+        opacity: 1;
+        transform: translateY(0);
+
+        .streamers {
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .streamer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            .icon {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                transition: all 200ms ease-in-out;
+
+                &::after {
+                    background-color: red;
+                }
+
+                &:hover::before {
+                    border-radius: 50%;
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                    animation: pulse 1s ease-in-out infinite;
+                    background-color: red;
+
+                }
+
+                &:hover::after {
+                    transform: scale(1.3);
+                    background-color: rgb(214, 0, 0);
+                    transition: transform 150ms linear;
+                }
+            }
+
+            &:hover .icon::after {
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                content: "\f04b";
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                border-radius: 50%;
+
+            }
+
+            &:hover .icon {
+                transform: translateY(-20%);
+            }
+
+
+            .name {
+                font-weight: bold;
+                font-size: 1.1rem;
+            }
+
+            .number {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: .7;
+    }
+
+    100% {
+        transform: scale(1.7);
+        opacity: .4;
+    }
+}
+
+
+@keyframes gameName {
+    0% {
+        text-align: left;
+        opacity: 1;
+    }
+
+    20% {
+        text-align: left;
+        opacity: 0;
+    }
+
+    50% {
+        text-align: center;
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        text-align: center;
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(540deg);
+    }
+}

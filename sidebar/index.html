@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+</head>
+
+<body>
+    <nav>
+        <div class="top">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <h1>LOGO</h1>
+        </div>
+        <div class="sidebar">
+            <div class="menu-list">
+                <div class="menu menu-1">
+                    <div class="title title-menu-1">
+                        <p>Menu 1</p>
+                        <i class="fas fa-sort-up"></i>
+                    </div>
+                    <ul class="option option-menu-1">
+                        <li>option 1</li>
+                        <li>option 2</li>
+                        <li>option 3</li>
+                    </ul>
+                </div>
+                <div class="menu menu-2">
+                    <div class="title title-menu-1">
+                        <p>Menu 2</p>
+                        <i class="fas fa-sort-up"></i>
+                    </div>
+                    <ul class="option option-menu-2">
+                        <li>option 1</li>
+                        <li>option 2</li>
+                        <li>option 3</li>
+                    </ul>
+                </div>
+                <div class="menu menu-2">
+                    <div class="title title-menu-1">
+                        <p>Menu 3</p>
+                        <i class="fas fa-sort-up"></i>
+                    </div>
+                    <ul class="option option-menu-2">
+                        <li>option 1</li>
+                        <li>option 2</li>
+                        <li>option 3</li>
+                    </ul>
+                </div>
+                <div class="menu menu-2">
+                    <div class="title title-menu-1">
+                        <p>Menu 4</p>
+                        <i class="fas fa-sort-up"></i>
+                    </div>
+                    <ul class="option option-menu-2">
+                        <li>option 1</li>
+                        <li>option 2</li>
+                        <li>option 3</li>
+                    </ul>
+                </div>
+                <div class="menu menu-2">
+                    <div class="title title-menu-1">
+                        <p>Menu 5</p>
+                        <i class="fas fa-sort-up"></i>
+                    </div>
+                    <ul class="option option-menu-2">
+                        <li>option 1</li>
+                        <li>option 2</li>
+                        <li>option 3</li>
+                    </ul>
+                </div>
+                <div class="menu menu-2">
+                    <div class="title title-menu-1">
+                        <p>Menu 6</p>
+                        <i class="fas fa-sort-up"></i>
+                    </div>
+                    <ul class="option option-menu-2">
+                        <li>option 1</li>
+                        <li>option 2</li>
+                        <li>option 3</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </nav>
+    <main>
+
+    </main>
+
+
+
+
+    <script>
+        let title = document.querySelectorAll('.title')
+        let menu = document.querySelectorAll('.menu')
+        title.forEach(p => {
+            p.addEventListener('click', () => {
+                let sib = p.nextElementSibling;
+                let arrow = p.children[1]
+                arrow.classList.toggle('show')
+                sib.classList.toggle('show')
+            })
+        })
+
+        let hamburger = document.querySelector('.top')
+        let menuList = document.querySelector('.menu-list')
+        hamburger.addEventListener('click', () => {
+            menuList.classList.toggle('mob')
+            let span = hamburger.children;
+            hamburger.classList.toggle('show')
+            for (let i = 0; i < span.length; i++) {
+                span[i].classList.toggle('mob')
+            }
+        })
+    </script>
+</body>
+
+</html>

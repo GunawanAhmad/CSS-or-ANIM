@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.hamburger:hover .line-1,
+.hamburger:hover .line-2,
+.hamburger:hover .line-3 {
+    transform-origin: 50% 50%;
+    animation: grow ease-out 500ms;
+    border: 1px solid red;
+}
+
+
+.hamburger:hover .line-2 {
+    animation-delay: 75ms;
+}
+
+.hamburger:hover .line-3 {
+    animation-delay: 150ms;
+}
+
+@keyframes grow {
+    0% {
+        transform: scaleX(1);
+    }
+
+    50% {
+        transform: scaleX(1.5);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+}

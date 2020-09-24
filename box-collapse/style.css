@@ -1,0 +1,45 @@
+body {}
+
+.container {
+    position: absolute;
+    width: 400px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.test {
+    height: 40px;
+    width: 400px;
+    background-color: lightblue;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    transform-origin: top center;
+    position: absolute;
+    display: grid;
+    place-items: center;
+
+}
+
+.box {
+    border: 3px solid black;
+    height: auto;
+    width: 300px;
+    margin-top: 30px;
+    overflow: hidden;
+    transform-origin: top center;
+    transition: all 400ms ease-in-out;
+    z-index: -99;
+}
+
+.box.hide {
+    transform: scaleY(0);
+}
+
+.test.active {
+    transform: scaleY(1.3);
+}

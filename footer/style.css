@@ -1,0 +1,29 @@
+/* html {
+    height: 100%;
+} */
+
+
+
+html,
+body {
+
+    margin: 0;
+}
+
+main {
+    min-height: calc(100vh - 55px);
+    padding: 1.5rem;
+
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 55px;
+    background: rgb(27, 27, 27);
+    color: white;
+    text-align: center;
+    font-family: sans-serif
+}

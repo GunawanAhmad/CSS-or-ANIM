@@ -1,0 +1,39 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="test">TEST</div>
+        <div class="box">
+            <ul>
+                <li>gunawan</li>
+                <li>gunawan</li>
+                <li>gunawan</li>
+                <li>gunawan</li>
+                <li>gunawan</li>
+                <li>gunawan</li>
+                <li>gunawan</li>
+                <li>gunawan</li>
+                <li>gunawan</li>
+                <li>gunawan</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        let test = document.querySelector('.test')
+        let box = document.querySelector('.box')
+        test.addEventListener('click', () => {
+            test.classList.toggle('active')
+            box.classList.toggle('hide')
+        })
+    </script>
+</body>
+
+</html>
