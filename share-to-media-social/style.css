@@ -1,0 +1,62 @@
+[class*="circle-"] {
+  /* border: 1px solid blue; */
+  left: 0;
+  top: 0;
+  position: absolute;
+  transition: transform 250ms ease-in-out;
+}
+
+.container {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  /* border: 1px solid red; */
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container > div {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #36393e;
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  color: #e4e5e6;
+  cursor: pointer;
+}
+
+.share {
+  z-index: 99;
+  position: relative;
+}
+
+.ig:hover {
+  background: #d6249f;
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+}
+
+.twitter:hover {
+  background: #1da1f2;
+}
+
+.fb:hover {
+  background: #3b5998;
+}
+
+.wa:hover {
+  background: #25d366;
+}
