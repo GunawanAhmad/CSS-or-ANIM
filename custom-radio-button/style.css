@@ -1,5 +1,5 @@
 :root {
-  --black: #313131;
+  --black: #3d443c;
 }
 
 body {
@@ -9,22 +9,25 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: sans-serif;
 }
 
 .radio-container {
   position: relative;
-  /* border: 1px solid red; */
   padding-left: 25px;
   height: 20px;
   display: flex;
   align-items: center;
   cursor: pointer;
+  margin: 0.5rem 0;
 }
 
+/* Hide the real input */
 .radio-container input {
   opacity: 0;
 }
 
+/* the container for the circle of radio button */
 .radio-container .fake-radio {
   position: absolute;
   left: 0;
@@ -35,6 +38,7 @@ body {
   border-radius: 50%;
 }
 
+/* create main circle in the middle of radio button */
 .radio-container .fake-radio::before {
   content: "";
   position: absolute;
@@ -48,7 +52,21 @@ body {
   transition: all 150ms ease;
 }
 
+/* condition when the radio is checked */
 .radio-container input:checked ~ .fake-radio::before {
   height: 70%;
   width: 70%;
+}
+
+/* condition when the radio is dsisabled (change the color and opacity) */
+.radio-container input:disabled ~ .fake-radio::before {
+  background-color: grey;
+  opacity: 0.7;
+}
+
+/* condition when the radio is dsisabled (change the border and opacity) */
+
+.radio-container input:disabled ~ .fake-radio {
+  border: 1px solid grey;
+  opacity: 0.7;
 }

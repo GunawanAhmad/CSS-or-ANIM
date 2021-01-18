@@ -6,10 +6,19 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <label class="radio-container">
-      Custom Radio Button
-      <input type="radio" />
-      <span class="fake-radio"></span>
-    </label>
+    <div>
+      <label class="radio-container">
+        Custom Radio Button
+        <input type="radio" />
+        <span class="fake-radio"></span>
+      </label>
+
+      <!-- for the disabled version (the only difference is the input is disabled :)) -->
+      <label class="radio-container">
+        Custom Radio Button (Disabled)
+        <input type="radio" checked="checked" disabled />
+        <span class="fake-radio"></span>
+      </label>
+    </div>
   </body>
 </html>
