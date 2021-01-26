@@ -1,0 +1,84 @@
+body {
+  background-color: #f1f3f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.media {
+  height: 150px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: -6px -6px 15px rgba(255, 255, 255, 0.5),
+    6px 6px 15px rgba(70, 70, 70, 0.12);
+}
+
+.play {
+  /* padding: 1rem; */
+  height: 40px;
+  width: 40px;
+  font-size: 0.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -6px -6px 15px rgba(255, 255, 255, 0.5),
+    6px 6px 15px rgba(70, 70, 70, 0.12);
+  border-radius: 50%;
+  margin: 0 1rem;
+}
+
+.forward,
+.backward {
+  font-size: 0.7rem;
+}
+
+.circle {
+  /* transform: translate(-50%, -50%); */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+    10px 10px 15px rgba(70, 70, 70, 0.12),
+    inset -10px -10px 15px rgba(255, 255, 255, 0.5),
+    inset 10px 10px 15px rgba(70, 70, 70, 0.12);
+  border: 10px solid #f1f3f6;
+  filter: blur(3px);
+  animation: animation 2s linear infinite;
+  transform-origin: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+
+.circle2 {
+  animation: animation 2s linear infinite;
+  animation-delay: 0.5s;
+}
+
+.circle3 {
+  animation: animation 2s linear infinite;
+  animation-delay: 1s;
+
+  /* border-color: red; */
+}
+
+@keyframes animation {
+  50% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}
